@@ -7,3 +7,11 @@ bin/*
 
 .kitchen/
 .kitchen.local.yml
+
+# Data folders
+data/
+data_vm/
+data_docker/
+
+# Berkshelf
+Berksfile.lock
