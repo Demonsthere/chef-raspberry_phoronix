@@ -32,8 +32,9 @@ remote_file '/tmp/pts.zip' do
   source node[:raspberry_phoronix][:pts_url]
 end
 
-execute 'Unpack the PTS' do
-  command 'unzip /tmp/pts.zip -d /'
+execute 'Unzip the PTS' do
+  command 'unzip pts.zip -d /'
+  cwd '/tmp'
   action :run
 end
 
@@ -43,33 +44,47 @@ execute 'Install the PTS' do
   action :run
 end
 
-# template '/etc/phoronix-test-suite.xml' do
-#   source 'phoronix-test-suite.xml.erb'
-#   owner 'root'
-#   group 'root'
-#   mode '0644'
-# end
+execute 'Cleanup ' do
+  command 'rm -rf /phoronix-test-suite-master'
+  action :run
+end
 
-node[:raspberry_phoronix][:pts_suites].each do |suite|
-  execute "Install #{suite}" do
-    command "phoronix-test-suite install #{suite}"
-    action :run
-    user 'vagrant'
-  end
+execute 'Install suites' do
+  command "phoronix-test-suite batch-install #{node[:raspberry_phoronix][:pts_suites].join(' ')}"
+  action :run
+  user node[:raspberry_phoronix][:user]
+end
 
-  template "/home/vagrant/run_test_#{suite}" do
-    source 'run_test_suite.sh.erb'
-    owner 'vagrant'
-    mode '0755'
-    variables(
-      :test_suite => suite,
-      :test_name => suite,
-      :test_description => 'DUPA'
-      )
+template "#{node[:raspberry_phoronix][:pts_home]}/user-config.xml" do
+  source 'user-config.xml.erb'
+  owner node[:raspberry_phoronix][:user]
+  group node[:raspberry_phoronix][:user]
+  mode '0644'
+end
+
+script 'Run the test suites' do
+  interpreter 'bash'
+  user node[:raspberry_phoronix][:user]
+  code <<-EOH
+    phoronix-test-suite batch-run #{node[:raspberry_phoronix][:pts_suites].join(' ')} << EOC
+      mytestsuite
+    EOC
+  EOH
+end
+
+execute 'Create results statistic' do
+  command 'phoronix-test-suite result-file-to-text mytestsuite > mytestsuite.txt'
+  action :run
+  user node[:raspberry_phoronix][:user]
+  cwd "/home/#{node[:raspberry_phoronix][:user]}"
+end
+
+ruby_block 'Print results to screen' do
+  results = "/home/#{node[:raspberry_phoronix][:user]}/mytestsuite.txt"
+  only_if { ::File.exist?(results) }
+  block do
+    print "\n"
+    print File.read(results)
+    print "\n"
   end
-  
-  # execute "Run test: #{suite}" do
-  #   command "./run_test_#{suite}"
-  #   action :run
-  # end
 end
