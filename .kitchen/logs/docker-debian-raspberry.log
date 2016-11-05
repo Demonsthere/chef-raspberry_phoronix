@@ -1,0 +1,70 @@
+I, [2016-11-05T15:02:02.712456 #8143]  INFO -- docker-debian-raspberry: -----> Creating <docker-debian-raspberry>...
+E, [2016-11-05T15:02:36.939359 #8143] ERROR -- docker-debian-raspberry: Create failed on instance <docker-debian-raspberry>.
+E, [2016-11-05T15:02:36.939617 #8143] ERROR -- docker-debian-raspberry: ------Exception-------
+E, [2016-11-05T15:02:36.939654 #8143] ERROR -- docker-debian-raspberry: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2016-11-05T15:02:36.939682 #8143] ERROR -- docker-debian-raspberry: Message: Expected process to exit with [0], but received '100'
+---- Begin output of docker build - ----
+STDOUT: Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM arm_box-debian
+[91m# Executing 1 build trigger...
+[0mStep 1 : RUN sudo apt-get -qq update
+ ---> Running in ce29a93e73fe
+ ---> 02849b48107c
+Removing intermediate container ce29a93e73fe
+Step 2 : RUN apt-get update
+ ---> Running in 6c642a870b11
+[91mE[0m[91m: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)[0m[91m
+[0m[91mE: Unable to lock directory /var/lib/apt/lists/
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+[0m
+STDERR: The command '/bin/sh -c apt-get update' returned a non-zero code: 100
+---- End output of docker build - ----
+Ran docker build - returned 100
+E, [2016-11-05T15:02:36.939712 #8143] ERROR -- docker-debian-raspberry: ---Nested Exception---
+E, [2016-11-05T15:02:36.939733 #8143] ERROR -- docker-debian-raspberry: Class: Mixlib::ShellOut::ShellCommandFailed
+E, [2016-11-05T15:02:36.939752 #8143] ERROR -- docker-debian-raspberry: Message: Expected process to exit with [0], but received '100'
+---- Begin output of docker build - ----
+STDOUT: Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM arm_box-debian
+[91m# Executing 1 build trigger...
+[0mStep 1 : RUN sudo apt-get -qq update
+ ---> Running in ce29a93e73fe
+ ---> 02849b48107c
+Removing intermediate container ce29a93e73fe
+Step 2 : RUN apt-get update
+ ---> Running in 6c642a870b11
+[91mE[0m[91m: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)[0m[91m
+[0m[91mE: Unable to lock directory /var/lib/apt/lists/
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+[0m
+STDERR: The command '/bin/sh -c apt-get update' returned a non-zero code: 100
+---- End output of docker build - ----
+Ran docker build - returned 100
+E, [2016-11-05T15:02:36.939773 #8143] ERROR -- docker-debian-raspberry: ------Backtrace-------
+E, [2016-11-05T15:02:36.939792 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/shell_out.rb:73:in `rescue in run_command'
+E, [2016-11-05T15:02:36.939812 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/shell_out.rb:61:in `run_command'
+E, [2016-11-05T15:02:36.939832 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/kitchen-docker_cli-0.18.0/lib/kitchen/transport/docker_cli.rb:86:in `run_docker'
+E, [2016-11-05T15:02:36.939851 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/kitchen-docker_cli-0.18.0/lib/kitchen/driver/docker_cli.rb:87:in `block in build'
+E, [2016-11-05T15:02:36.939871 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/transport/base.rb:79:in `initialize'
+E, [2016-11-05T15:02:36.939895 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/kitchen-docker_cli-0.18.0/lib/kitchen/transport/docker_cli.rb:39:in `new'
+E, [2016-11-05T15:02:36.939915 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/kitchen-docker_cli-0.18.0/lib/kitchen/transport/docker_cli.rb:39:in `connection'
+E, [2016-11-05T15:02:36.939935 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/kitchen-docker_cli-0.18.0/lib/kitchen/driver/docker_cli.rb:86:in `build'
+E, [2016-11-05T15:02:36.941163 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/kitchen-docker_cli-0.18.0/lib/kitchen/driver/docker_cli.rb:63:in `create'
+E, [2016-11-05T15:02:36.941197 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:424:in `public_send'
+E, [2016-11-05T15:02:36.941264 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:424:in `block in perform_action'
+E, [2016-11-05T15:02:36.941287 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:488:in `call'
+E, [2016-11-05T15:02:36.941308 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:488:in `synchronize_or_call'
+E, [2016-11-05T15:02:36.941328 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:453:in `block in action'
+E, [2016-11-05T15:02:36.941354 #8143] ERROR -- docker-debian-raspberry: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2016-11-05T15:02:36.941375 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:452:in `action'
+E, [2016-11-05T15:02:36.941395 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:424:in `perform_action'
+E, [2016-11-05T15:02:36.941415 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:352:in `create_action'
+E, [2016-11-05T15:02:36.941434 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:341:in `block in transition_to'
+E, [2016-11-05T15:02:36.941454 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:340:in `each'
+E, [2016-11-05T15:02:36.941473 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:340:in `transition_to'
+E, [2016-11-05T15:02:36.941493 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/instance.rb:160:in `verify'
+E, [2016-11-05T15:02:36.941512 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/command.rb:176:in `public_send'
+E, [2016-11-05T15:02:36.941536 #8143] ERROR -- docker-debian-raspberry: /Users/i319397/.chefdk/gem/ruby/2.1.0/gems/test-kitchen-1.4.2/lib/kitchen/command.rb:176:in `block (2 levels) in run_action'
+E, [2016-11-05T15:02:36.941557 #8143] ERROR -- docker-debian-raspberry: ----------------------

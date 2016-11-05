@@ -1,0 +1,6 @@
+---
+hostname: 127.0.0.1
+port: '2222'
+username: vagrant
+ssh_key: "/Users/i319397/gitHub/chef-raspberry_phoronix/.kitchen/kitchen-vagrant/kitchen-chef-raspberry_phoronix-default-debian8-local/.vagrant/machines/default/virtualbox/private_key"
+last_action: converge

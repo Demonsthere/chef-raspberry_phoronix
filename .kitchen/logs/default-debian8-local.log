@@ -1,0 +1,184 @@
+I, [2016-11-05T11:20:37.318487 #5188]  INFO -- default-debian8-local: -----> Creating <default-debian8-local>...
+I, [2016-11-05T11:20:38.709204 #5188]  INFO -- default-debian8-local: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2016-11-05T11:20:39.134628 #5188]  INFO -- default-debian8-local: ==> default: Importing base box 'debian8_local'...
+I, [2016-11-05T11:20:51.683706 #5188]  INFO -- default-debian8-local: [KProgress: 10%[KProgress: 20%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+I, [2016-11-05T11:20:52.331377 #5188]  INFO -- default-debian8-local: ==> default: Setting the name of the VM: kitchen-chef-raspberry_phoronix-default-debian8-local_default_1478341252285_89502
+I, [2016-11-05T11:20:52.853714 #5188]  INFO -- default-debian8-local: ==> default: Clearing any previously set network interfaces...
+I, [2016-11-05T11:20:52.908501 #5188]  INFO -- default-debian8-local: ==> default: Preparing network interfaces based on configuration...
+I, [2016-11-05T11:20:52.908848 #5188]  INFO -- default-debian8-local:     default: Adapter 1: nat
+I, [2016-11-05T11:20:52.958163 #5188]  INFO -- default-debian8-local: ==> default: Forwarding ports...
+I, [2016-11-05T11:20:53.034535 #5188]  INFO -- default-debian8-local:     default: 22 (guest) => 2222 (host) (adapter 1)
+I, [2016-11-05T11:20:53.182525 #5188]  INFO -- default-debian8-local: ==> default: Running 'pre-boot' VM customizations...
+I, [2016-11-05T11:20:53.232336 #5188]  INFO -- default-debian8-local: ==> default: Booting VM...
+I, [2016-11-05T11:20:53.449679 #5188]  INFO -- default-debian8-local: ==> default: Waiting for machine to boot. This may take a few minutes...
+I, [2016-11-05T11:20:53.729689 #5188]  INFO -- default-debian8-local:     default: SSH address: 127.0.0.1:2222
+I, [2016-11-05T11:20:53.729793 #5188]  INFO -- default-debian8-local:     default: SSH username: vagrant
+I, [2016-11-05T11:20:53.730061 #5188]  INFO -- default-debian8-local:     default: SSH auth method: private key
+I, [2016-11-05T11:20:53.896153 #5188]  INFO -- default-debian8-local:     default: Warning: Remote connection disconnect. Retrying...
+I, [2016-11-05T11:21:03.941876 #5188]  INFO -- default-debian8-local:     default: Warning: Remote connection disconnect. Retrying...
+I, [2016-11-05T11:21:04.455057 #5188]  INFO -- default-debian8-local:     default: 
+I, [2016-11-05T11:21:04.455116 #5188]  INFO -- default-debian8-local:     default: Vagrant insecure key detected. Vagrant will automatically replace
+I, [2016-11-05T11:21:04.455157 #5188]  INFO -- default-debian8-local:     default: this with a newly generated keypair for better security.
+I, [2016-11-05T11:21:04.888770 #5188]  INFO -- default-debian8-local:     default: 
+I, [2016-11-05T11:21:04.888839 #5188]  INFO -- default-debian8-local:     default: Inserting generated public key within guest...
+I, [2016-11-05T11:21:04.954616 #5188]  INFO -- default-debian8-local:     default: Removing insecure key from the guest if it's present...
+I, [2016-11-05T11:21:04.994746 #5188]  INFO -- default-debian8-local:     default: Key inserted! Disconnecting and reconnecting using new SSH key...
+I, [2016-11-05T11:21:05.487169 #5188]  INFO -- default-debian8-local: ==> default: Machine booted and ready!
+I, [2016-11-05T11:21:05.487504 #5188]  INFO -- default-debian8-local: ==> default: Checking for guest additions in VM...
+I, [2016-11-05T11:21:05.539737 #5188]  INFO -- default-debian8-local: ==> default: Setting hostname...
+I, [2016-11-05T11:21:07.277629 #5188]  INFO -- default-debian8-local: ==> default: Machine not provisioned because `--no-provision` is specified.
+I, [2016-11-05T11:21:09.211411 #5188]  INFO -- default-debian8-local: [SSH] Established
+I, [2016-11-05T11:21:09.211839 #5188]  INFO -- default-debian8-local: Vagrant instance <default-debian8-local> created.
+I, [2016-11-05T11:21:09.215894 #5188]  INFO -- default-debian8-local: Finished creating <default-debian8-local> (0m31.89s).
+I, [2016-11-05T11:21:09.215992 #5188]  INFO -- default-debian8-local: -----> Converging <default-debian8-local>...
+I, [2016-11-05T11:21:09.217293 #5188]  INFO -- default-debian8-local: Preparing files for transfer
+I, [2016-11-05T11:21:09.217393 #5188]  INFO -- default-debian8-local: Preparing dna.json
+I, [2016-11-05T11:21:09.220184 #5188]  INFO -- default-debian8-local: Resolving cookbook dependencies with Berkshelf 4.0.1...
+I, [2016-11-05T11:21:13.564228 #5188]  INFO -- default-debian8-local: Removing non-cookbook files before transfer
+I, [2016-11-05T11:21:13.641507 #5188]  INFO -- default-debian8-local: Preparing data
+I, [2016-11-05T11:21:15.426467 #5188]  INFO -- default-debian8-local: Preparing validation.pem
+I, [2016-11-05T11:21:15.429378 #5188]  INFO -- default-debian8-local: Preparing client.rb
+I, [2016-11-05T11:21:15.443549 #5188]  INFO -- default-debian8-local: -----> Chef Omnibus installation detected (install only if missing)
+I, [2016-11-05T11:21:15.455400 #5188]  INFO -- default-debian8-local: Transferring files to <default-debian8-local>
+I, [2016-11-05T11:21:49.285008 #5188]  INFO -- default-debian8-local: Starting Chef Client, version 12.8.1
+I, [2016-11-05T11:21:51.006452 #5188]  INFO -- default-debian8-local: Creating a new client identity for default-debian8-local using the validator key.
+I, [2016-11-05T11:21:51.076282 #5188]  INFO -- default-debian8-local: resolving cookbooks for run list: ["raspberry_phoronix::default"]
+I, [2016-11-05T11:21:51.103731 #5188]  INFO -- default-debian8-local: Synchronizing Cookbooks:
+I, [2016-11-05T11:21:51.112782 #5188]  INFO -- default-debian8-local:   - raspberry_phoronix (0.1.0)
+I, [2016-11-05T11:21:51.116182 #5188]  INFO -- default-debian8-local: Installing Cookbook Gems:
+I, [2016-11-05T11:21:51.116218 #5188]  INFO -- default-debian8-local: Compiling Cookbooks...
+I, [2016-11-05T11:21:51.120231 #5188]  INFO -- default-debian8-local: Converging 14 resources
+I, [2016-11-05T11:21:51.120814 #5188]  INFO -- default-debian8-local: Recipe: raspberry_phoronix::default
+I, [2016-11-05T11:21:51.121231 #5188]  INFO -- default-debian8-local:   * cookbook_file[/etc/apt/sources.list] action create (skipped due to only_if)
+I, [2016-11-05T11:21:51.124283 #5188]  INFO -- default-debian8-local:   * cookbook_file[/etc/apt/apt.conf.d/42-auth_allow] action create
+I, [2016-11-05T11:21:51.124660 #5188]  INFO -- default-debian8-local:     - create new file /etc/apt/apt.conf.d/42-auth_allow
+I, [2016-11-05T11:21:51.124952 #5188]  INFO -- default-debian8-local:     - update content in file /etc/apt/apt.conf.d/42-auth_allow from none to 644563
+I, [2016-11-05T11:21:51.125360 #5188]  INFO -- default-debian8-local:     --- /etc/apt/apt.conf.d/42-auth_allow	2016-11-05 11:21:51.101854004 +0100
+I, [2016-11-05T11:21:51.125723 #5188]  INFO -- default-debian8-local:     +++ /etc/apt/apt.conf.d/.chef-42-auth_allow20161105-1307-1vl0iua	2016-11-05 11:21:51.101854004 +0100
+I, [2016-11-05T11:21:51.125946 #5188]  INFO -- default-debian8-local:     @@ -1 +1,2 @@
+I, [2016-11-05T11:21:51.128365 #5188]  INFO -- default-debian8-local:     +APT::Get::AllowUnauthenticated "true";
+I, [2016-11-05T11:21:51.128879 #5188]  INFO -- default-debian8-local:     - change mode from '' to '0644'
+I, [2016-11-05T11:21:51.129096 #5188]  INFO -- default-debian8-local:     - change owner from '' to 'root'
+I, [2016-11-05T11:21:51.129297 #5188]  INFO -- default-debian8-local:     - change group from '' to 'root'
+I, [2016-11-05T11:22:00.748146 #5188]  INFO -- default-debian8-local:   * execute[do a system update] action run
+I, [2016-11-05T11:22:00.748227 #5188]  INFO -- default-debian8-local:     - execute apt-get update --fix-missing
+I, [2016-11-05T11:22:00.827093 #5188]  INFO -- default-debian8-local:  (up to date)
+I, [2016-11-05T11:22:00.898839 #5188]  INFO -- default-debian8-local:   * apt_package[unzip] action install (up to date)
+I, [2016-11-05T11:22:06.141140 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:06.141198 #5188]  INFO -- default-debian8-local:     - install version 5.6.27+dfsg-0+deb8u1 of package php5-cli
+I, [2016-11-05T11:22:07.402709 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:07.402784 #5188]  INFO -- default-debian8-local:     - install version 3:1.7.dfsg-1 of package php-fpdf
+I, [2016-11-05T11:22:08.878878 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:08.878941 #5188]  INFO -- default-debian8-local:     - install version 1.0.3-1 of package htop
+I, [2016-11-05T11:22:11.307207 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:11.319622 #5188]  INFO -- default-debian8-local:     - create new file /tmp/pts.zip
+I, [2016-11-05T11:22:11.321084 #5188]  INFO -- default-debian8-local:     - update content in file /tmp/pts.zip from none to 35726e
+I, [2016-11-05T11:22:11.321376 #5188]  INFO -- default-debian8-local:     (new content is binary, diff output suppressed)
+I, [2016-11-05T11:22:11.322529 #5188]  INFO -- default-debian8-local:     - change mode from '' to '0644'
+I, [2016-11-05T11:22:11.405656 #5188]  INFO -- default-debian8-local:   * execute[Unpack the PTS] action run
+I, [2016-11-05T11:22:11.405822 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:11.473151 #5188]  INFO -- default-debian8-local:   * execute[Install the PTS] action run
+I, [2016-11-05T11:22:11.473212 #5188]  INFO -- default-debian8-local:     - execute ./install-sh
+I, [2016-11-05T11:22:11.473358 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:11.475508 #5188]  INFO -- default-debian8-local:     - create new file /etc/phoronix-test-suite.xml
+I, [2016-11-05T11:22:11.477106 #5188]  INFO -- default-debian8-local:     - update content in file /etc/phoronix-test-suite.xml from none to 4f9537
+I, [2016-11-05T11:22:11.478367 #5188]  INFO -- default-debian8-local:     --- /etc/phoronix-test-suite.xml	2016-11-05 11:22:11.453854004 +0100
+I, [2016-11-05T11:22:11.478738 #5188]  INFO -- default-debian8-local:     +++ /etc/.chef-phoronix-test-suite.xml20161105-1307-1it6jpx	2016-11-05 11:22:11.453854004 +0100
+I, [2016-11-05T11:22:11.478981 #5188]  INFO -- default-debian8-local:     @@ -1 +1,71 @@
+I, [2016-11-05T11:22:11.479234 #5188]  INFO -- default-debian8-local:     +<?xml version="1.0"?>
+I, [2016-11-05T11:22:11.479460 #5188]  INFO -- default-debian8-local:     +<!--Phoronix Test Suite v6.8.0m1-->
+I, [2016-11-05T11:22:11.479684 #5188]  INFO -- default-debian8-local:     +<?xml-stylesheet type="text/xsl" href="xsl/pts-user-config-viewer.xsl"?>
+I, [2016-11-05T11:22:11.479910 #5188]  INFO -- default-debian8-local:     +<PhoronixTestSuite>
+I, [2016-11-05T11:22:11.480142 #5188]  INFO -- default-debian8-local:     +  <Options>
+I, [2016-11-05T11:22:11.480341 #5188]  INFO -- default-debian8-local:     +    <OpenBenchmarking>
+I, [2016-11-05T11:22:11.480542 #5188]  INFO -- default-debian8-local:     +      <AnonymousUsageReporting>TRUE</AnonymousUsageReporting>
+I, [2016-11-05T11:22:11.480741 #5188]  INFO -- default-debian8-local:     +      <IndexCacheTTL>3</IndexCacheTTL>
+I, [2016-11-05T11:22:11.480951 #5188]  INFO -- default-debian8-local:     +      <AlwaysUploadSystemLogs>FALSE</AlwaysUploadSystemLogs>
+I, [2016-11-05T11:22:11.481140 #5188]  INFO -- default-debian8-local:     +    </OpenBenchmarking>
+I, [2016-11-05T11:22:11.481343 #5188]  INFO -- default-debian8-local:     +    <General>
+I, [2016-11-05T11:22:11.481585 #5188]  INFO -- default-debian8-local:     +      <DefaultBrowser></DefaultBrowser>
+I, [2016-11-05T11:22:11.481796 #5188]  INFO -- default-debian8-local:     +      <UsePhodeviCache>TRUE</UsePhodeviCache>
+I, [2016-11-05T11:22:11.482067 #5188]  INFO -- default-debian8-local:     +      <DefaultDisplayMode>DEFAULT</DefaultDisplayMode>
+I, [2016-11-05T11:22:11.482276 #5188]  INFO -- default-debian8-local:     +      <PhoromaticServers></PhoromaticServers>
+I, [2016-11-05T11:22:11.482477 #5188]  INFO -- default-debian8-local:     +      <FullOutput>FALSE</FullOutput>
+I, [2016-11-05T11:22:11.482665 #5188]  INFO -- default-debian8-local:     +    </General>
+I, [2016-11-05T11:22:11.482856 #5188]  INFO -- default-debian8-local:     +    <Modules>
+I, [2016-11-05T11:22:11.483055 #5188]  INFO -- default-debian8-local:     +      <LoadModules>toggle_screensaver, update_checker, graphics_event_checker</LoadModules>
+I, [2016-11-05T11:22:11.495483 #5188]  INFO -- default-debian8-local:     +    </Modules>
+I, [2016-11-05T11:22:11.495723 #5188]  INFO -- default-debian8-local:     +    <Installation>
+I, [2016-11-05T11:22:11.495945 #5188]  INFO -- default-debian8-local:     +      <RemoveDownloadFiles>FALSE</RemoveDownloadFiles>
+I, [2016-11-05T11:22:11.496162 #5188]  INFO -- default-debian8-local:     +      <SearchMediaForCache>TRUE</SearchMediaForCache>
+I, [2016-11-05T11:22:11.496396 #5188]  INFO -- default-debian8-local:     +      <SymLinkFilesFromCache>FALSE</SymLinkFilesFromCache>
+I, [2016-11-05T11:22:11.496606 #5188]  INFO -- default-debian8-local:     +      <PromptForDownloadMirror>FALSE</PromptForDownloadMirror>
+I, [2016-11-05T11:22:11.496828 #5188]  INFO -- default-debian8-local:     +      <EnvironmentDirectory>/results/installed-tests/</EnvironmentDirectory>
+I, [2016-11-05T11:22:11.497036 #5188]  INFO -- default-debian8-local:     +      <CacheDirectory>/results/download-cache/</CacheDirectory>
+I, [2016-11-05T11:22:11.497214 #5188]  INFO -- default-debian8-local:     +    </Installation>
+I, [2016-11-05T11:22:11.497398 #5188]  INFO -- default-debian8-local:     +    <Testing>
+I, [2016-11-05T11:22:11.497581 #5188]  INFO -- default-debian8-local:     +      <SaveSystemLogs>TRUE</SaveSystemLogs>
+I, [2016-11-05T11:22:11.497796 #5188]  INFO -- default-debian8-local:     +      <SaveInstallationLogs>FALSE</SaveInstallationLogs>
+I, [2016-11-05T11:22:11.498066 #5188]  INFO -- default-debian8-local:     +      <SaveTestLogs>TRUE</SaveTestLogs>
+I, [2016-11-05T11:22:11.498306 #5188]  INFO -- default-debian8-local:     +      <RemoveTestInstallOnCompletion></RemoveTestInstallOnCompletion>
+I, [2016-11-05T11:22:11.498520 #5188]  INFO -- default-debian8-local:     +      <ResultsDirectory>/results/test-results/</ResultsDirectory>
+I, [2016-11-05T11:22:11.498719 #5188]  INFO -- default-debian8-local:     +      <AlwaysUploadResultsToOpenBenchmarking>FALSE</AlwaysUploadResultsToOpenBenchmarking>
+I, [2016-11-05T11:22:11.498931 #5188]  INFO -- default-debian8-local:     +      <AutoSortRunQueue>TRUE</AutoSortRunQueue>
+I, [2016-11-05T11:22:11.499126 #5188]  INFO -- default-debian8-local:     +    </Testing>
+I, [2016-11-05T11:22:11.499318 #5188]  INFO -- default-debian8-local:     +    <TestResultValidation>
+I, [2016-11-05T11:22:11.499579 #5188]  INFO -- default-debian8-local:     +      <DynamicRunCount>FALSE</DynamicRunCount>
+I, [2016-11-05T11:22:11.499799 #5188]  INFO -- default-debian8-local:     +      <LimitDynamicToTestLength>20</LimitDynamicToTestLength>
+I, [2016-11-05T11:22:11.499997 #5188]  INFO -- default-debian8-local:     +      <StandardDeviationThreshold>3.50</StandardDeviationThreshold>
+I, [2016-11-05T11:22:11.500203 #5188]  INFO -- default-debian8-local:     +      <ExportResultsTo></ExportResultsTo>
+I, [2016-11-05T11:22:11.500398 #5188]  INFO -- default-debian8-local:     +      <MinimalTestTime>3</MinimalTestTime>
+I, [2016-11-05T11:22:11.500582 #5188]  INFO -- default-debian8-local:     +    </TestResultValidation>
+I, [2016-11-05T11:22:11.500773 #5188]  INFO -- default-debian8-local:     +    <BatchMode>
+I, [2016-11-05T11:22:11.500964 #5188]  INFO -- default-debian8-local:     +      <SaveResults>TRUE</SaveResults>
+I, [2016-11-05T11:22:11.501148 #5188]  INFO -- default-debian8-local:     +      <OpenBrowser>FALSE</OpenBrowser>
+I, [2016-11-05T11:22:11.501334 #5188]  INFO -- default-debian8-local:     +      <UploadResults>FALSE</UploadResults>
+I, [2016-11-05T11:22:11.501522 #5188]  INFO -- default-debian8-local:     +      <PromptForTestIdentifier>FALSE</PromptForTestIdentifier>
+I, [2016-11-05T11:22:11.501706 #5188]  INFO -- default-debian8-local:     +      <PromptForTestDescription>FALSE</PromptForTestDescription>
+I, [2016-11-05T11:22:11.501906 #5188]  INFO -- default-debian8-local:     +      <PromptSaveName>FALSE</PromptSaveName>
+I, [2016-11-05T11:22:11.502096 #5188]  INFO -- default-debian8-local:     +      <RunAllTestCombinations>TRUE</RunAllTestCombinations>
+I, [2016-11-05T11:22:11.502283 #5188]  INFO -- default-debian8-local:     +      <Configured>TRUE</Configured>
+I, [2016-11-05T11:22:11.502478 #5188]  INFO -- default-debian8-local:     +    </BatchMode>
+I, [2016-11-05T11:22:11.502680 #5188]  INFO -- default-debian8-local:     +    <Networking>
+I, [2016-11-05T11:22:11.502873 #5188]  INFO -- default-debian8-local:     +      <NoInternetCommunication>FALSE</NoInternetCommunication>
+I, [2016-11-05T11:22:11.503064 #5188]  INFO -- default-debian8-local:     +      <NoNetworkCommunication>FALSE</NoNetworkCommunication>
+I, [2016-11-05T11:22:11.503861 #5188]  INFO -- default-debian8-local:     +      <Timeout>20</Timeout>
+I, [2016-11-05T11:22:11.504089 #5188]  INFO -- default-debian8-local:     +      <ProxyAddress></ProxyAddress>
+I, [2016-11-05T11:22:11.504314 #5188]  INFO -- default-debian8-local:     +      <ProxyPort></ProxyPort>
+I, [2016-11-05T11:22:11.504529 #5188]  INFO -- default-debian8-local:     +    </Networking>
+I, [2016-11-05T11:22:11.504763 #5188]  INFO -- default-debian8-local:     +    <Server>
+I, [2016-11-05T11:22:11.504967 #5188]  INFO -- default-debian8-local:     +      <RemoteAccessPort>RANDOM</RemoteAccessPort>
+I, [2016-11-05T11:22:11.505172 #5188]  INFO -- default-debian8-local:     +      <Password></Password>
+I, [2016-11-05T11:22:11.505410 #5188]  INFO -- default-debian8-local:     +      <WebSocketPort>RANDOM</WebSocketPort>
+I, [2016-11-05T11:22:11.505680 #5188]  INFO -- default-debian8-local:     +      <AdvertiseServiceZeroConf>TRUE</AdvertiseServiceZeroConf>
+I, [2016-11-05T11:22:11.505894 #5188]  INFO -- default-debian8-local:     +      <PhoromaticStorage>/results/phoromatic/</PhoromaticStorage>
+I, [2016-11-05T11:22:11.506130 #5188]  INFO -- default-debian8-local:     +    </Server>
+I, [2016-11-05T11:22:11.506454 #5188]  INFO -- default-debian8-local:     +  </Options>
+I, [2016-11-05T11:22:11.506685 #5188]  INFO -- default-debian8-local:     +</PhoronixTestSuite>
+I, [2016-11-05T11:22:11.506887 #5188]  INFO -- default-debian8-local:     - change mode from '' to '0644'
+I, [2016-11-05T11:22:11.507093 #5188]  INFO -- default-debian8-local:     - change owner from '' to 'root'
+I, [2016-11-05T11:22:11.507281 #5188]  INFO -- default-debian8-local:     - change group from '' to 'root'
+I, [2016-11-05T11:22:29.603680 #5188]  INFO -- default-debian8-local:   * execute[Install build-apache] action run
+I, [2016-11-05T11:22:29.603741 #5188]  INFO -- default-debian8-local:     - execute phoronix-test-suite install build-apache
+I, [2016-11-05T11:22:29.603762 #5188]  INFO -- default-debian8-local:   * template[/run_test_build-apache] action create
+I, [2016-11-05T11:22:29.604567 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:29.604602 #5188]  INFO -- default-debian8-local:     - update content in file /run_test_build-apache from none to a4acb6
+I, [2016-11-05T11:22:29.604623 #5188]  INFO -- default-debian8-local:     --- /run_test_build-apache	2016-11-05 11:22:29.581854004 +0100
+I, [2016-11-05T11:22:29.604790 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:29.604815 #5188]  INFO -- default-debian8-local:     @@ -1 +1,9 @@
+I, [2016-11-05T11:22:29.604940 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:29.604962 #5188]  INFO -- default-debian8-local:     +  y
+I, [2016-11-05T11:22:29.604977 #5188]  INFO -- default-debian8-local:     +  build-apache
+I, [2016-11-05T11:22:29.604990 #5188]  INFO -- default-debian8-local:     +  build-apache
+I, [2016-11-05T11:22:29.605376 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:29.605556 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:29.605674 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:29.606445 #5188]  INFO -- default-debian8-local:     +EOF
+I, [2016-11-05T11:22:29.606476 #5188]  INFO -- default-debian8-local:     - change mode from '' to '0755'
+I, [2016-11-05T11:22:29.606494 #5188]  INFO -- default-debian8-local:     - change owner from '' to 'root'
+I, [2016-11-05T11:22:29.606885 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:29.619425 #5188]  INFO -- default-debian8-local: 
+I, [2016-11-05T11:22:29.620417 #5188]  INFO -- default-debian8-local: Running handlers:
+I, [2016-11-05T11:22:29.620455 #5188]  INFO -- default-debian8-local: Running handlers complete
+I, [2016-11-05T11:22:29.620714 #5188]  INFO -- default-debian8-local: Chef Client finished, 11/14 resources updated in 40 seconds
+I, [2016-11-05T11:22:31.612332 #5188]  INFO -- default-debian8-local: Finished converging <default-debian8-local> (1m22.39s).

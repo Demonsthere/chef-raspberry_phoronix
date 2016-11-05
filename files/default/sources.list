@@ -1,0 +1,6 @@
+deb http://ftp.pl.debian.org/debian jessie main contrib non-free
+deb http://ftp.pl.debian.org/debian jessie-updates main
+deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi
+
+deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi
+deb-src http://ftp.pl.debian.org/debian jessie main contrib non-free

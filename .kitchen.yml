@@ -1,0 +1,60 @@
+---
+platforms:
+  - name: debian-raspberry
+    driver:
+      name: docker_cli
+      use_sudo: false
+      remove_images: true
+      container_name: phoronix_test_suite
+      privileged: false
+      memory_limit: 2048m
+      cpu_shares: 512
+      # network: bridge
+    driver_config:
+      image: "arm_box-debian"
+      platform: debian
+      hostname: pts
+      envirionment:
+        TERM: 'xterm'
+      volume:
+        - <%= Dir::pwd %>/data:/results:rw
+    transport:
+      name: docker_cli
+    provisioner:
+      name: chef_solo
+      require_chef_omnibus: false
+      chef_solo_path: '/usr/bin/chef-solo'
+
+  - name: debian8_local
+    driver:
+      name: vagrant
+      box: debian8_local
+      box_url: "http://apache.pitux.ovh/data/vagrant/debian8_local.box"
+      # synced_folders:
+      #   - ["data_vm/", "/home/vagrant/"]
+    driver_config:
+      customize:
+        nictype1: 'virtio'
+    transport:
+      name: ssh
+    provisioner:
+      name: chef_zero
+
+
+suites:
+  - name: docker
+    run_list:
+      - recipe[raspberry_phoronix::default]
+    attributes:
+      raspberry_phoronix:
+        set_sources: true
+    excludes: ["debian8_local"]
+
+  - name: vm
+    run_list:
+      - recipe[raspberry_phoronix::default]
+    attributes:
+      raspberry_phoronix:
+        set_sources: false
+    excludes: ["debian-raspberry"]
+
