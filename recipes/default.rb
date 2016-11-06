@@ -1,4 +1,4 @@
-::Chef::Recipe.send(:include, Chef::Mixin::ShellOut)
+require 'mixlib/shellout'
 #
 # Cookbook Name:: raspberry_phoronix
 # Recipe:: default
@@ -76,7 +76,9 @@ ruby_block 'Run test suite' do
     user = node[:raspberry_phoronix][:user]
     home = "/home/#{node[:raspberry_phoronix][:user]}"
     command = "/bin/su - #{user} -c #{home}/run_test_suite.sh"
-    shell_out(command, timeout: 100_000)
+    shell = Mixlib::ShellOut.new(command, timeout: 100_000)
+    shell.run_command
+    # shell_out(command, timeout: 100_000)
   end
 end
 
