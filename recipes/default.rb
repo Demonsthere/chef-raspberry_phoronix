@@ -62,18 +62,25 @@ template "#{node[:raspberry_phoronix][:pts_home]}/user-config.xml" do
   mode '0644'
 end
 
-script 'Run the test suites' do
-  interpreter 'bash'
-  user node[:raspberry_phoronix][:user]
-  code <<-EOH
-    phoronix-test-suite batch-run #{node[:raspberry_phoronix][:pts_suites].join(' ')} << EOC
-      mytestsuite
-    EOC
-  EOH
+template "/home/#{node[:raspberry_phoronix][:user]}/run_test_suite.sh" do
+  source 'run_test_suite.sh.erb'
+  owner node[:raspberry_phoronix][:user]
+  group node[:raspberry_phoronix][:user]
+  mode '0755'
+  variables(test_name: 'mytestsuite')
+end
+
+ruby_block 'Run test suite' do
+  block do
+    user = node[:raspberry_phoronix][:user]
+    home = "/home/#{node[:raspberry_phoronix][:user]}"
+    command = "/bin/su - #{user} -c #{home}/run_test_suite.sh"
+    shell_out!(command, timeout: 100_000)
+  end
 end
 
 execute 'Create results statistic' do
-  command 'phoronix-test-suite result-file-to-text mytestsuite > mytestsuite.txt'
+  command 'phoronix-test-suite result-file-to-csv mytestsuite > mytestsuite.txt'
   action :run
   user node[:raspberry_phoronix][:user]
   cwd "/home/#{node[:raspberry_phoronix][:user]}"

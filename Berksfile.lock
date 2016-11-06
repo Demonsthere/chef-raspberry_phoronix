@@ -1,7 +1,0 @@
-DEPENDENCIES
-  raspberry_phoronix
-    path: .
-    metadata: true
-
-GRAPH
-  raspberry_phoronix (0.1.0)
