@@ -50,7 +50,4 @@ suites:
     attributes:
       raspberry_phoronix:
         set_sources: false
-        user: 'root'
-        pts_home: '/root/.phoronix-test-suite'
-        user_home: '/root'
     excludes: ["debian-raspberry"]
