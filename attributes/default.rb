@@ -1,4 +1,4 @@
-#I am an wrongly written comment
+# I am a proper commit!
 default[:raspberry_phoronix][:set_sources] = false
 default[:raspberry_phoronix][:user] = 'vagrant'
 default[:raspberry_phoronix][:user_home] = "/home/#{node[:raspberry_phoronix][:user]}"
