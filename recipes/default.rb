@@ -50,10 +50,11 @@ execute 'Cleanup ' do
   action :run
 end
 
-execute 'Install suites' do
-  command "phoronix-test-suite batch-install #{node[:raspberry_phoronix][:pts_suites].join(' ')}"
-  action :run
-  user node[:raspberry_phoronix][:user]
+directory node[:raspberry_phoronix][:pts_home] do
+  owner node[:raspberry_phoronix][:user]
+  group node[:raspberry_phoronix][:user]
+  mode '0755'
+  action :create
 end
 
 template "#{node[:raspberry_phoronix][:pts_home]}/user-config.xml" do
@@ -63,7 +64,13 @@ template "#{node[:raspberry_phoronix][:pts_home]}/user-config.xml" do
   mode '0644'
 end
 
-template "/home/#{node[:raspberry_phoronix][:user]}/run_test_suite.sh" do
+execute 'Install suites' do
+  command "phoronix-test-suite batch-install #{node[:raspberry_phoronix][:pts_suites].join(' ')}"
+  action :run
+  user node[:raspberry_phoronix][:user]
+end
+
+template "#{node[:raspberry_phoronix][:user_home]}/run_test_suite.sh" do
   source 'run_test_suite.sh.erb'
   owner node[:raspberry_phoronix][:user]
   group node[:raspberry_phoronix][:user]
@@ -74,11 +81,10 @@ end
 ruby_block 'Run test suite' do
   block do
     user = node[:raspberry_phoronix][:user]
-    home = "/home/#{node[:raspberry_phoronix][:user]}"
+    home = node[:raspberry_phoronix][:user_home]
     command = "/bin/su - #{user} -c #{home}/run_test_suite.sh"
     shell = Mixlib::ShellOut.new(command, timeout: 100_000)
     shell.run_command
-    # shell_out(command, timeout: 100_000)
   end
 end
 
@@ -86,11 +92,11 @@ execute 'Create results statistic' do
   command 'phoronix-test-suite result-file-to-csv mytestsuite > mytestsuite.txt'
   action :run
   user node[:raspberry_phoronix][:user]
-  cwd "/home/#{node[:raspberry_phoronix][:user]}"
+  cwd node[:raspberry_phoronix][:user_home]
 end
 
 ruby_block 'Print results to screen' do
-  results = "/home/#{node[:raspberry_phoronix][:user]}/mytestsuite.txt"
+  results = "#{node[:raspberry_phoronix][:user_home]}/mytestsuite.txt"
   only_if { ::File.exist?(results) }
   block do
     print "\n"

@@ -7,17 +7,14 @@ platforms:
       remove_images: true
       container_name: phoronix_test_suite
       privileged: false
-      memory_limit: 2048m
-      cpu_shares: 512
-      # network: bridge
+      memory_limit: 8192m
+      cpu_shares: 1024
     driver_config:
       image: "arm_box-debian"
       platform: debian
       hostname: pts
       envirionment:
         TERM: 'xterm'
-      volume:
-        - <%= Dir::pwd %>/data:/results:rw
     transport:
       name: docker_cli
     provisioner:
@@ -30,8 +27,6 @@ platforms:
       name: vagrant
       box: debian8_local
       box_url: "http://apache.pitux.ovh/data/vagrant/debian8_local.box"
-      # synced_folders:
-      #   - ["data_vm/", "/home/vagrant/"]
     driver_config:
       customize:
         nictype1: 'virtio'
@@ -39,7 +34,6 @@ platforms:
       name: ssh
     provisioner:
       name: chef_zero
-
 
 suites:
   - name: docker
@@ -56,5 +50,7 @@ suites:
     attributes:
       raspberry_phoronix:
         set_sources: false
+        user: 'root'
+        pts_home: '/root/.phoronix-test-suite'
+        user_home: '/root'
     excludes: ["debian-raspberry"]
-

@@ -18,8 +18,6 @@ RUN usermod -aG sudo vagrant
 
 RUN echo "vagrant ALL=NOPASSWD:ALL" >> /etc/sudoers.d/vagrant
 
-USER vagrant
-
 RUN sudo mkdir -p /opt/chef/embedded/bin
 RUN sudo ln -s /usr/bin/gem /opt/chef/embedded/bin/gem
 RUN sudo ln -s /usr/bin/ruby /opt/chef/embedded/bin/ruby
